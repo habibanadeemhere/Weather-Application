@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    transition: background 0.5s ease;
+}
+
+
+.weather-app {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.weather-app:hover {
+    transform: scale(1.02);
+}
+
+.weather-app h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #ffd700;
+}
+
+
+.search {
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.search input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.search input::placeholder {
+    color: #ccc;
+}
+
+.search input:focus {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.search button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    background: #ff9800;
+    color: #000;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.search button:hover {
+    background: #ffc107;
+    transform: scale(1.05);
+}
+
+
+.weather-info {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.weather-info p, .weather-info h2 {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+
+.error {
+    color: #ff4d4d;
+    margin-top: 15px;
+    font-weight: bold;
+    animation: shake 0.3s;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+
+@media (max-width: 500px) {
+    .weather-app {
+        padding: 20px;
+        width: 90%;
+    }
+    .weather-app h1 {
+        font-size: 1.5rem;
+    }
+    .search input, .search button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    .weather-info p, .weather-info h2 {
+        font-size: 1rem;
+    }
+}
+
+
+@keyframes shake-btn {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake-btn 0.3s;
+}
